@@ -1,20 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name" translatable="false">DuoCash</string>
-    <string name="signature">Una app de lacosta.agency</string>
+    <string name="signature">Hecha por lacosta.agency</string>
 
     <!-- Inicio -->
     <string name="home_add">Anotar</string>
     <string name="home_previous_month">Mes anterior</string>
     <string name="home_next_month">Mes siguiente</string>
-    <string name="home_balance">Balance del mes</string>
+    <string name="home_balance_of">Balance de %1$s</string>
+    <string name="home_rate_label">Tasa</string>
     <string name="home_expenses">Gastos</string>
     <string name="home_income">Ingresos</string>
     <string name="home_rate">Tu tasa: 1 %1$s = %2$s %3$s</string>
     <string name="home_rate_missing">Aún no tienes tasa. Ponla al anotar tu primer gasto o en Ajustes.</string>
     <string name="home_missing_rate_note">Algunos movimientos no entran en el total porque falta su tasa.</string>
-    <string name="home_empty_title">Por aquí, calma total</string>
-    <string name="home_empty_body">Anota tu primer gasto y deja que las cuentas salgan solas. Tú, tranquilo.</string>
+    <string name="home_empty_title">Todavía no hay movimientos</string>
+    <string name="home_empty_body">Toca + para anotar tu primer gasto. Verás el monto en tus dos monedas al instante.</string>
     <string name="day_today">Hoy</string>
     <string name="day_yesterday">Ayer</string>
 
@@ -32,7 +33,7 @@
     <string name="movement_category">Categoría</string>
     <string name="movement_note">Nota (opcional)</string>
     <string name="movement_delete_title">¿Borrar este movimiento?</string>
-    <string name="movement_delete_body">Se va para siempre, como la ola que no vuelve.</string>
+    <string name="movement_delete_body">No se puede deshacer.</string>
 
     <!-- Categorías -->
     <string name="category_food">Comida</string>
@@ -72,8 +73,8 @@
     <string name="settings_rate_saved">Listo, tasa guardada.</string>
     <string name="settings_theme">Tema</string>
     <string name="theme_system">Sistema</string>
-    <string name="theme_light">Claro</string>
-    <string name="theme_dark">Oscuro</string>
+    <string name="theme_light">Día</string>
+    <string name="theme_dark">Noche</string>
     <string name="settings_version">Versión %1$s</string>
 
     <!-- Acciones -->

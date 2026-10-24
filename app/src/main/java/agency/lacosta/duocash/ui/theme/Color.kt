@@ -2,17 +2,28 @@ package agency.lacosta.duocash.ui.theme
 
 import androidx.compose.ui.graphics.Color
 
-// Paleta de lacosta.agency (manual de marca v1.1).
-val MarProfundo = Color(0xFF0F3B4C)
-val Salitre = Color(0xFF8FB7B3)
-val Laguna = Color(0xFF32A8A8)
-val Arena = Color(0xFFEEE3CE)
-val Sol = Color(0xFFF2B544)
-val Sunset = Color(0xFFE2694A)
-val Reef = Color(0xFF3A3A3A)
+// Paleta "Noche" de DuoCash: oscura por defecto, con un modo claro "Día".
 
-// Tonos derivados para superficies y modo oscuro.
-val ArenaClara = Color(0xFFF6EFE2)
-val ArenaOscura = Color(0xFFE2D4B8)
-val MarNoche = Color(0xFF0A2C39)
-val MarSuperficie = Color(0xFF16485B)
+// Noche
+val Ink = Color(0xFF0B0D12)
+val Night = Color(0xFF161A23)
+val NightRaised = Color(0xFF1E2330)
+val NightLine = Color(0xFF262B38)
+val Mist = Color(0xFF9AA1B2)
+val Snow = Color(0xFFF2F3F7)
+val Violet = Color(0xFFA28BFF)
+val VioletSoft = Color(0xFF23202F)
+val Mint = Color(0xFF7FE3B0)
+val MintSoft = Color(0xFF17302A)
+val Coral = Color(0xFFFF7A7A)
+
+// Día
+val Paper = Color(0xFFF5F6FA)
+val Card = Color(0xFFFFFFFF)
+val PaperLine = Color(0xFFE2E4EC)
+val Slate = Color(0xFF5A6072)
+val VioletDeep = Color(0xFF5B3FE0)
+val VioletMist = Color(0xFFEDE8FF)
+val Pine = Color(0xFF137A4F)
+val PineMist = Color(0xFFDDF4E8)
+val Brick = Color(0xFFC23B3B)

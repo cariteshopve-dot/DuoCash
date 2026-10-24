@@ -51,8 +51,6 @@ import agency.lacosta.duocash.domain.Currency
 import agency.lacosta.duocash.domain.Money
 import agency.lacosta.duocash.ui.components.CurrencyPickerDialog
 import agency.lacosta.duocash.ui.components.StatusBarIcons
-import agency.lacosta.duocash.ui.components.WaveLine
-import agency.lacosta.duocash.ui.theme.Laguna
 
 private enum class Picking { PRIMARY, SECONDARY }
 
@@ -203,9 +201,9 @@ private fun RateEditor(key: String, initial: String, base: Currency, quote: Curr
 @Composable
 private fun ThemeSelector(mode: ThemeMode, onChange: (ThemeMode) -> Unit) {
     val options = listOf(
-        ThemeMode.SYSTEM to R.string.theme_system,
-        ThemeMode.LIGHT to R.string.theme_light,
         ThemeMode.DARK to R.string.theme_dark,
+        ThemeMode.LIGHT to R.string.theme_light,
+        ThemeMode.SYSTEM to R.string.theme_system,
     )
     SingleChoiceSegmentedButtonRow(Modifier.fillMaxWidth()) {
         options.forEachIndexed { index, (value, label) ->
@@ -226,7 +224,7 @@ private fun About() {
     }.getOrNull().orEmpty()
     Column(Modifier.fillMaxWidth().padding(vertical = 24.dp), horizontalAlignment = Alignment.CenterHorizontally) {
         Text(stringResource(R.string.app_name), style = MaterialTheme.typography.headlineSmall)
-        WaveLine(Laguna, Modifier.width(96.dp).padding(vertical = 6.dp))
+        Spacer(Modifier.height(4.dp))
         Text(stringResource(R.string.signature), style = MaterialTheme.typography.bodyMedium)
         Text(
             stringResource(R.string.settings_version, version),

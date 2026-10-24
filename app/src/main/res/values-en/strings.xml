@@ -1,19 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="signature">An app by lacosta.agency</string>
+    <string name="signature">Made by lacosta.agency</string>
 
     <!-- Home -->
     <string name="home_add">Add</string>
     <string name="home_previous_month">Previous month</string>
     <string name="home_next_month">Next month</string>
-    <string name="home_balance">Month balance</string>
+    <string name="home_balance_of">%1$s balance</string>
+    <string name="home_rate_label">Rate</string>
     <string name="home_expenses">Expenses</string>
     <string name="home_income">Income</string>
     <string name="home_rate">Your rate: 1 %1$s = %2$s %3$s</string>
     <string name="home_rate_missing">No rate yet. Set it with your first expense or in Settings.</string>
     <string name="home_missing_rate_note">Some entries are left out of the total because their rate is missing.</string>
-    <string name="home_empty_title">All calm around here</string>
-    <string name="home_empty_body">Add your first expense and let the numbers sort themselves out. Relax, we got this.</string>
+    <string name="home_empty_title">No entries yet</string>
+    <string name="home_empty_body">Tap + to add your first expense. You will see it in both currencies right away.</string>
     <string name="day_today">Today</string>
     <string name="day_yesterday">Yesterday</string>
 
@@ -31,7 +32,7 @@
     <string name="movement_category">Category</string>
     <string name="movement_note">Note (optional)</string>
     <string name="movement_delete_title">Delete this entry?</string>
-    <string name="movement_delete_body">It\'s gone for good, like a wave that never comes back.</string>
+    <string name="movement_delete_body">This can\'t be undone.</string>
 
     <!-- Categories -->
     <string name="category_food">Food</string>
@@ -71,8 +72,8 @@
     <string name="settings_rate_saved">Done, rate saved.</string>
     <string name="settings_theme">Theme</string>
     <string name="theme_system">System</string>
-    <string name="theme_light">Light</string>
-    <string name="theme_dark">Dark</string>
+    <string name="theme_light">Day</string>
+    <string name="theme_dark">Night</string>
     <string name="settings_version">Version %1$s</string>
 
     <!-- Actions -->

@@ -11,41 +11,37 @@ import androidx.compose.ui.unit.sp
 import agency.lacosta.duocash.R
 
 @OptIn(ExperimentalTextApi::class)
-private fun variable(res: Int, weight: Int) =
-    Font(res, FontWeight(weight), variationSettings = FontVariation.Settings(FontVariation.weight(weight)))
+private fun sora(weight: Int) =
+    Font(R.font.sora, FontWeight(weight), variationSettings = FontVariation.Settings(FontVariation.weight(weight)))
 
-/** Titulares y números grandes. */
-val Bricolage = FontFamily(
-    variable(R.font.bricolage_grotesque, 600),
-    variable(R.font.bricolage_grotesque, 800),
-)
-
-/** Textos. */
-val Instrument = FontFamily(
-    variable(R.font.instrument_sans, 400),
-    variable(R.font.instrument_sans, 500),
-    variable(R.font.instrument_sans, 600),
-)
+/** Sora para todo: textos, títulos y números. */
+val Sora = FontFamily(sora(400), sora(600), sora(700))
 
 private val base = Typography()
 
+private fun TextStyle.sora(weight: FontWeight, tracking: Float = 0f) =
+    copy(fontFamily = Sora, fontWeight = weight, letterSpacing = if (tracking != 0f) tracking.sp else letterSpacing)
+
 val DuoTypography = Typography(
-    displayLarge = base.displayLarge.copy(fontFamily = Bricolage, fontWeight = FontWeight.ExtraBold),
-    displayMedium = base.displayMedium.copy(fontFamily = Bricolage, fontWeight = FontWeight.ExtraBold),
-    displaySmall = base.displaySmall.copy(fontFamily = Bricolage, fontWeight = FontWeight.ExtraBold),
-    headlineLarge = base.headlineLarge.copy(fontFamily = Bricolage, fontWeight = FontWeight.ExtraBold),
-    headlineMedium = base.headlineMedium.copy(fontFamily = Bricolage, fontWeight = FontWeight.ExtraBold),
-    headlineSmall = base.headlineSmall.copy(fontFamily = Bricolage, fontWeight = FontWeight.SemiBold),
-    titleLarge = base.titleLarge.copy(fontFamily = Bricolage, fontWeight = FontWeight.SemiBold),
-    titleMedium = base.titleMedium.copy(fontFamily = Bricolage, fontWeight = FontWeight.SemiBold),
-    titleSmall = base.titleSmall.copy(fontFamily = Instrument, fontWeight = FontWeight.SemiBold),
-    bodyLarge = base.bodyLarge.copy(fontFamily = Instrument),
-    bodyMedium = base.bodyMedium.copy(fontFamily = Instrument),
-    bodySmall = base.bodySmall.copy(fontFamily = Instrument),
-    labelLarge = base.labelLarge.copy(fontFamily = Instrument, fontWeight = FontWeight.SemiBold),
-    labelMedium = base.labelMedium.copy(fontFamily = Instrument, fontWeight = FontWeight.Medium),
-    labelSmall = base.labelSmall.copy(fontFamily = Instrument, fontWeight = FontWeight.Medium),
+    displayLarge = base.displayLarge.sora(FontWeight.Bold, -1.5f),
+    displayMedium = base.displayMedium.sora(FontWeight.Bold, -1.5f),
+    displaySmall = base.displaySmall.sora(FontWeight.Bold, -1f),
+    headlineLarge = base.headlineLarge.sora(FontWeight.Bold, -0.5f),
+    headlineMedium = base.headlineMedium.sora(FontWeight.Bold, -0.5f),
+    headlineSmall = base.headlineSmall.sora(FontWeight.SemiBold),
+    titleLarge = base.titleLarge.sora(FontWeight.Bold, -0.4f),
+    titleMedium = base.titleMedium.sora(FontWeight.SemiBold),
+    titleSmall = base.titleSmall.sora(FontWeight.SemiBold),
+    bodyLarge = base.bodyLarge.sora(FontWeight.Normal),
+    bodyMedium = base.bodyMedium.sora(FontWeight.Normal),
+    bodySmall = base.bodySmall.sora(FontWeight.Normal),
+    labelLarge = base.labelLarge.sora(FontWeight.SemiBold),
+    labelMedium = base.labelMedium.sora(FontWeight.Normal),
+    labelSmall = base.labelSmall.sora(FontWeight.Normal),
 )
 
-/** Montos en las listas: Bricolage, para que los números se lean como marca. */
-val AmountStyle = TextStyle(fontFamily = Bricolage, fontWeight = FontWeight.SemiBold, fontSize = 16.sp)
+/** Montos en las listas y tarjetas. */
+val AmountStyle = TextStyle(fontFamily = Sora, fontWeight = FontWeight.SemiBold, fontSize = 14.sp)
+
+/** El balance grande del inicio. */
+val BalanceStyle = TextStyle(fontFamily = Sora, fontWeight = FontWeight.Bold, fontSize = 44.sp, letterSpacing = (-1.5).sp)

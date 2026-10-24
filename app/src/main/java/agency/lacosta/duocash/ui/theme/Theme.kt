@@ -14,87 +14,91 @@ import agency.lacosta.duocash.data.settings.ThemeMode
 /** Colores propios de DuoCash que Material no tiene. */
 @Immutable
 data class DuoColors(
-    val header: Color,
-    val onHeader: Color,
-    val onHeaderMuted: Color,
+    val card: Color,
+    val cardLine: Color,
+    val iconBg: Color,
+    val iconTint: Color,
     val income: Color,
-    val waves: List<Color>,
+    val incomeBg: Color,
 )
 
-private val LightScheme = lightColorScheme(
-    primary = Sol,
-    onPrimary = MarProfundo,
-    primaryContainer = Sol,
-    onPrimaryContainer = MarProfundo,
-    secondary = Laguna,
-    onSecondary = MarProfundo,
-    secondaryContainer = ArenaOscura,
-    onSecondaryContainer = MarProfundo,
-    tertiary = Salitre,
-    onTertiary = MarProfundo,
-    background = Arena,
-    onBackground = MarProfundo,
-    surface = Arena,
-    onSurface = MarProfundo,
-    surfaceVariant = ArenaClara,
-    onSurfaceVariant = Reef,
-    surfaceContainerLowest = ArenaClara,
-    surfaceContainerLow = ArenaClara,
-    surfaceContainer = ArenaClara,
-    surfaceContainerHigh = ArenaClara,
-    surfaceContainerHighest = ArenaOscura,
-    outline = MarProfundo.copy(alpha = 0.35f),
-    outlineVariant = MarProfundo.copy(alpha = 0.15f),
-    error = Sunset,
-    onError = MarProfundo,
+private val NightScheme = darkColorScheme(
+    primary = Violet,
+    onPrimary = Ink,
+    primaryContainer = VioletSoft,
+    onPrimaryContainer = Violet,
+    secondary = Mint,
+    onSecondary = Ink,
+    secondaryContainer = NightRaised,
+    onSecondaryContainer = Snow,
+    tertiary = Mint,
+    onTertiary = Ink,
+    background = Ink,
+    onBackground = Snow,
+    surface = Ink,
+    onSurface = Snow,
+    surfaceVariant = Night,
+    onSurfaceVariant = Mist,
+    surfaceContainerLowest = Ink,
+    surfaceContainerLow = Night,
+    surfaceContainer = Night,
+    surfaceContainerHigh = NightRaised,
+    surfaceContainerHighest = NightRaised,
+    outline = NightLine,
+    outlineVariant = NightLine,
+    error = Coral,
+    onError = Ink,
 )
 
-private val DarkScheme = darkColorScheme(
-    primary = Sol,
-    onPrimary = MarProfundo,
-    primaryContainer = Sol,
-    onPrimaryContainer = MarProfundo,
-    secondary = Laguna,
-    onSecondary = MarProfundo,
-    secondaryContainer = MarSuperficie,
-    onSecondaryContainer = Arena,
-    tertiary = Salitre,
-    onTertiary = MarProfundo,
-    background = MarProfundo,
-    onBackground = Arena,
-    surface = MarProfundo,
-    onSurface = Arena,
-    surfaceVariant = MarSuperficie,
-    onSurfaceVariant = Salitre,
-    surfaceContainerLowest = MarNoche,
-    surfaceContainerLow = MarSuperficie,
-    surfaceContainer = MarSuperficie,
-    surfaceContainerHigh = MarSuperficie,
-    surfaceContainerHighest = MarSuperficie,
-    outline = Arena.copy(alpha = 0.35f),
-    outlineVariant = Arena.copy(alpha = 0.15f),
-    error = Sunset,
-    onError = MarProfundo,
+private val DayScheme = lightColorScheme(
+    primary = VioletDeep,
+    onPrimary = Card,
+    primaryContainer = VioletMist,
+    onPrimaryContainer = VioletDeep,
+    secondary = Pine,
+    onSecondary = Card,
+    secondaryContainer = VioletMist,
+    onSecondaryContainer = Ink,
+    tertiary = Pine,
+    onTertiary = Card,
+    background = Paper,
+    onBackground = Ink,
+    surface = Paper,
+    onSurface = Ink,
+    surfaceVariant = Card,
+    onSurfaceVariant = Slate,
+    surfaceContainerLowest = Card,
+    surfaceContainerLow = Card,
+    surfaceContainer = Card,
+    surfaceContainerHigh = Card,
+    surfaceContainerHighest = PaperLine,
+    outline = PaperLine,
+    outlineVariant = PaperLine,
+    error = Brick,
+    onError = Card,
 )
 
-private val LightDuo = DuoColors(
-    header = MarProfundo,
-    onHeader = Arena,
-    onHeaderMuted = Salitre,
-    income = Color(0xFF1F7F7F),
-    waves = listOf(Laguna, Salitre, Arena),
+private val NightDuo = DuoColors(
+    card = Night,
+    cardLine = NightLine,
+    iconBg = VioletSoft,
+    iconTint = Violet,
+    income = Mint,
+    incomeBg = MintSoft,
 )
 
-private val DarkDuo = DuoColors(
-    header = MarNoche,
-    onHeader = Arena,
-    onHeaderMuted = Salitre,
-    income = Laguna,
-    waves = listOf(Laguna, Salitre, MarProfundo),
+private val DayDuo = DuoColors(
+    card = Card,
+    cardLine = PaperLine,
+    iconBg = VioletMist,
+    iconTint = VioletDeep,
+    income = Pine,
+    incomeBg = PineMist,
 )
 
-val LocalDuoColors = staticCompositionLocalOf { LightDuo }
+val LocalDuoColors = staticCompositionLocalOf { NightDuo }
 
+/** Noche es el tema por defecto; "Sistema" sigue al teléfono. */
 @Composable
 fun DuoCashTheme(themeMode: ThemeMode = ThemeMode.SYSTEM, content: @Composable () -> Unit) {
     val dark = when (themeMode) {
@@ -102,9 +106,9 @@ fun DuoCashTheme(themeMode: ThemeMode = ThemeMode.SYSTEM, content: @Composable (
         ThemeMode.LIGHT -> false
         ThemeMode.DARK -> true
     }
-    CompositionLocalProvider(LocalDuoColors provides if (dark) DarkDuo else LightDuo) {
+    CompositionLocalProvider(LocalDuoColors provides if (dark) NightDuo else DayDuo) {
         MaterialTheme(
-            colorScheme = if (dark) DarkScheme else LightScheme,
+            colorScheme = if (dark) NightScheme else DayScheme,
             typography = DuoTypography,
             content = content,
         )

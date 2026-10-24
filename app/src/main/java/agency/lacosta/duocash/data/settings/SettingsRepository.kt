@@ -19,7 +19,7 @@ data class Settings(
     val secondary: Currency = Currency.VES,
     /** La tasa propia del par actual (1 primaria = X secundaria), si la persona la puso. */
     val manualRate: BigDecimal? = null,
-    val themeMode: ThemeMode = ThemeMode.SYSTEM,
+    val themeMode: ThemeMode = ThemeMode.DARK,
 ) {
     val pairRate: PairRate? get() = manualRate?.let { PairRate(primary, secondary, it) }
 }
@@ -37,7 +37,7 @@ class SettingsRepository(context: Context) {
             primary = primary,
             secondary = secondary,
             manualRate = prefs[rateKey(primary, secondary)]?.toBigDecimalOrNull(),
-            themeMode = prefs[THEME]?.let { runCatching { ThemeMode.valueOf(it) }.getOrNull() } ?: ThemeMode.SYSTEM,
+            themeMode = prefs[THEME]?.let { runCatching { ThemeMode.valueOf(it) }.getOrNull() } ?: ThemeMode.DARK,
         )
     }
 

@@ -9,9 +9,12 @@ import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.WindowInsets
+import androidx.compose.foundation.layout.asPaddingValues
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.navigationBars
+import androidx.compose.foundation.layout.navigationBarsPadding
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.statusBarsPadding
@@ -89,7 +92,8 @@ fun HomeScreen(
                 containerColor = MaterialTheme.colorScheme.primary,
                 contentColor = MaterialTheme.colorScheme.onPrimary,
                 elevation = FloatingActionButtonDefaults.elevation(defaultElevation = 0.dp),
-                modifier = Modifier.size(64.dp),
+                // El Scaffold no aplica márgenes del sistema aquí, así que el botón se separa a mano de la barra de Android.
+                modifier = Modifier.navigationBarsPadding().size(64.dp),
             ) {
                 Icon(Icons.Outlined.Add, contentDescription = stringResource(R.string.home_add), modifier = Modifier.size(30.dp))
             }
@@ -97,9 +101,10 @@ fun HomeScreen(
         floatingActionButtonPosition = FabPosition.Center,
         contentWindowInsets = WindowInsets(0),
     ) { padding ->
+        val navBottom = WindowInsets.navigationBars.asPaddingValues().calculateBottomPadding()
         LazyColumn(
             modifier = Modifier.fillMaxSize().padding(padding),
-            contentPadding = PaddingValues(start = 20.dp, end = 20.dp, bottom = 112.dp),
+            contentPadding = PaddingValues(start = 20.dp, end = 20.dp, bottom = 112.dp + navBottom),
             verticalArrangement = Arrangement.spacedBy(8.dp),
         ) {
             item {

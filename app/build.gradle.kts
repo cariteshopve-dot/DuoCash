@@ -17,6 +17,17 @@ android {
         versionName = "0.1.0"
     }
 
+    signingConfigs {
+        // Llave de prueba fija para que cada APK de GitHub Actions se instale encima del anterior.
+        // No sirve para publicar en Google Play: esa llave va aparte y nunca en el repositorio.
+        getByName("debug") {
+            storeFile = file("debug.keystore")
+            storePassword = "android"
+            keyAlias = "androiddebugkey"
+            keyPassword = "android"
+        }
+    }
+
     buildTypes {
         release {
             isMinifyEnabled = true

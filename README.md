@@ -4,6 +4,12 @@ Tus gastos en dos monedas, sin enredos. Una app de [lacosta.agency](https://laco
 
 App Android nativa (Kotlin + Jetpack Compose). Los datos se guardan en el teléfono.
 
+## Instalar en el teléfono
+
+Cada cambio en `main` compila un APK de prueba. Desde el teléfono, abre
+[Última versión de prueba](https://github.com/cariteshopve-dot/DuoCash/releases/tag/prueba), baja
+`DuoCash-prueba.apk` y ábrelo. Android pedirá permiso para instalar apps de esa fuente la primera vez.
+
 ## Abrir el proyecto
 
 1. Instala [Android Studio](https://developer.android.com/studio) (Ladybug o más nuevo).

@@ -6,7 +6,7 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import androidx.navigation.navArgument
-import agency.lacosta.duocash.ui.home.HomeScreen
+import agency.lacosta.duocash.ui.main.MainScreen
 import agency.lacosta.duocash.ui.movement.MovementScreen
 import agency.lacosta.duocash.ui.movement.MovementViewModel
 import agency.lacosta.duocash.ui.settings.SettingsScreen
@@ -24,7 +24,7 @@ fun DuoCashNavHost() {
     val nav = rememberNavController()
     NavHost(navController = nav, startDestination = Routes.HOME) {
         composable(Routes.HOME) {
-            HomeScreen(
+            MainScreen(
                 onAdd = { nav.navigate(Routes.movement()) },
                 onOpen = { nav.navigate(Routes.movement(it)) },
                 onSettings = { nav.navigate(Routes.SETTINGS) },

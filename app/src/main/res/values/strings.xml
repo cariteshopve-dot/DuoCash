@@ -19,6 +19,15 @@
     <string name="day_today">Hoy</string>
     <string name="day_yesterday">Ayer</string>
 
+    <!-- Pestañas y dashboard -->
+    <string name="tab_home">Inicio</string>
+    <string name="tab_dashboard">Dashboard</string>
+    <string name="dashboard_title">Dashboard</string>
+    <string name="dashboard_spent">Gastaste este mes</string>
+    <string name="dashboard_by_category">Por categoría</string>
+    <string name="dashboard_share">%1$d %% del total</string>
+    <string name="dashboard_empty">No hay gastos en este mes.</string>
+
     <!-- Movimiento -->
     <string name="movement_new_expense">Nuevo gasto</string>
     <string name="movement_new_income">Nuevo ingreso</string>

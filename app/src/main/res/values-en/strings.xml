@@ -18,6 +18,15 @@
     <string name="day_today">Today</string>
     <string name="day_yesterday">Yesterday</string>
 
+    <!-- Tabs and dashboard -->
+    <string name="tab_home">Home</string>
+    <string name="tab_dashboard">Dashboard</string>
+    <string name="dashboard_title">Dashboard</string>
+    <string name="dashboard_spent">Spent this month</string>
+    <string name="dashboard_by_category">By category</string>
+    <string name="dashboard_share">%1$d %% of total</string>
+    <string name="dashboard_empty">No expenses this month.</string>
+
     <!-- Movement -->
     <string name="movement_new_expense">New expense</string>
     <string name="movement_new_income">New income</string>
